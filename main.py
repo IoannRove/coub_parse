@@ -33,7 +33,7 @@ def downloadfile(name, url):
         print('Не удалось скачать: ' + url)
 
 
-# Возвращает dict {coub_id: coub_duration}
+# Получаем список ссылок на видео. Возвращает dict {coub_id: coub_duration}
 def get_list_from_coub(week_url):
     coubs_list = {}
     requset = requests.get(week_url)
@@ -52,8 +52,8 @@ def get_list_from_coub(week_url):
     return coubs_list
 
 
-# Объединяем предыдущие функции. На выходе готовые видео - кубы. Возвращает coubes_list
-def coubs_download(week_url):  # Объединяем предыдущие функции. На выходе готовые видео - кубы.
+# Объединяем предыдущие функции. На выходе готовые видео - кубы.
+def coubs_download(week_url):  
     cubes_list = get_list_from_coub(week_url)
     numb = 0
     for id_duration in cubes_list:
